@@ -13,7 +13,7 @@
  * 	Clock configuration for the Nucleo STM32F072RB board
  * 	HSE input Bypass Mode 			-> 8MHz
  * 	SYSCLK, AHB  					-> 48MHz
- * 	APB1/4							-> 12Mhz
+ * 	APB1/1						    -> 48Mhz
  *  PA8 as MCO with /16 prescaler 	-> 3MHz
  *
  */
@@ -63,9 +63,9 @@ void SystemClock_Config()
 	RCC->CFGR &= ~RCC_CFGR_HPRE_Msk;
 	RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
 
-	/*Set the Advanced Peripheral Bus 1 (APB1)  prescaler to /4 */
+	/*Set the Advanced Peripheral Bus 1 (APB1)  prescaler to /1 */
 	RCC->CFGR &= ~RCC_CFGR_HPRE_Msk;
-	RCC->CFGR |= RCC_CFGR_HPRE_DIV1;// PCLK (APB1) -> 12 MHz
+	RCC->CFGR |= RCC_CFGR_HPRE_DIV1;// PCLK (APB1) -> 48 MHz
 
 	/* Enable FLASH Prefetch Buffer and set Flash Latency */
 	FLASH->ACR = FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY;
