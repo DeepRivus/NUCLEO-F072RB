@@ -1,0 +1,210 @@
+12:02:46 **** Clean-only build of configuration Debug for project UART_Print ****
+make -j16 clean 
+rm -rf ./Startup/startup_stm32f072rbtx.d ./Startup/startup_stm32f072rbtx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/printf-stdarg.d ./Src/printf-stdarg.o ./Src/printf-stdarg.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system_stm32f0xx.d ./Src/system_stm32f0xx.o ./Src/system_stm32f0xx.su ./Src/systemclk_Config.d ./Src/systemclk_Config.o ./Src/systemclk_Config.su ./Src/uartPrint.d ./Src/uartPrint.o ./Src/uartPrint.su ./Src/userLed.d ./Src/userLed.o ./Src/userLed.su
+rm -rf UART_Print.elf UART_Print.list UART_Print.map default.size.stdout
+ 
+12:02:46 **** Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f072rbtx.d" -MT"Startup/startup_stm32f072rbtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f072rbtx.o" "../Startup/startup_stm32f072rbtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/printf-stdarg.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/printf-stdarg.d" -MT"Src/printf-stdarg.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/printf-stdarg.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f0xx.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f0xx.d" -MT"Src/system_stm32f0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f0xx.o"
+arm-none-eabi-gcc "../Src/systemclk_Config.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systemclk_Config.d" -MT"Src/systemclk_Config.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/systemclk_Config.o"
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc "../Src/userLed.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/userLed.d" -MT"Src/userLed.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/userLed.o"
+../Src/systemclk_Config.c: In function 'SystemClock_Config':
+../Src/systemclk_Config.c:93:16: error: 'RCC7_CFGR_MCOPRE_Msk' undeclared (first use in this function); did you mean 'RCC_CFGR_MCOPRE_Msk'?
+   93 |  RCC->CFGR &= ~RCC7_CFGR_MCOPRE_Msk;
+      |                ^~~~~~~~~~~~~~~~~~~~
+      |                RCC_CFGR_MCOPRE_Msk
+../Src/systemclk_Config.c:93:16: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:40: Src/systemclk_Config.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+12:03:04 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/systemclk_Config.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systemclk_Config.d" -MT"Src/systemclk_Config.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/systemclk_Config.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3096	     12	   1564	   4672	   1240	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:08:37 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3096	     12	   1564	   4672	   1240	UART_Print.elf
+Finished building: default.size.stdout
+ 
+12:15:16 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3096	     12	   1564	   4672	   1240	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:16:23 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3096	     12	   1564	   4672	   1240	UART_Print.elf
+Finished building: default.size.stdout
+ 
+12:20:29 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3096	     12	   1564	   4672	   1240	UART_Print.elf
+Finished building: default.size.stdout
+ 
+12:22:41 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3096	     12	   1564	   4672	   1240	UART_Print.elf
+Finished building: default.size.stdout
+ 
+12:28:48 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/systemclk_Config.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systemclk_Config.d" -MT"Src/systemclk_Config.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/systemclk_Config.o"
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:32:22 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/systemclk_Config.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systemclk_Config.d" -MT"Src/systemclk_Config.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/systemclk_Config.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:36:58 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+12:42:52 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:43:24 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:54:14 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+12:55:03 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/uartPrint.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uartPrint.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+18:27:54 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/userLed.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F0 -DSTM32F072RBTx -DNUCLEO_F072RB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/userLed.d" -MT"Src/userLed.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/userLed.o"
+arm-none-eabi-gcc -o "UART_Print.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\Arturo de los Rios\Documents\Personal Projects\DeepRivus\DeepRivus_Repos\NUCLEO-F072RB\UART_Print\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Print.elf
+ 
+arm-none-eabi-size   UART_Print.elf 
+arm-none-eabi-objdump -h -S  UART_Print.elf  > "UART_Print.list"
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Print.list
+ 
+18:29:27 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+18:30:32 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
+18:32:00 **** Incremental Build of configuration Debug for project UART_Print ****
+make -j16 all 
+arm-none-eabi-size   UART_Print.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3076	     12	   1564	   4652	   122c	UART_Print.elf
+Finished building: default.size.stdout
+ 
